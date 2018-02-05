@@ -36,3 +36,12 @@ test("developer", function(){
   expect(result).toEqual(expected);
 
 })
+
+test("learnLanguage", function(){
+  var expected = {name: "Bob", languages: ["Java", "HTML", "CSS"],};
+  var dev = new functions.Developer("Bob", ["Java", "HTML"]);
+  console.log(dev);
+  dev.learnLanguage("CSS");
+  var result = dev;
+  expect(result).toEqual(expected);
+})

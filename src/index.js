@@ -79,3 +79,12 @@ function Developer(name,languages) {
 }
 
 exports.Developer = Developer;
+
+
+Developer.prototype.learnLanguage = function (newLanguage){
+  this.languages.push(newLanguage);
+  var uniqueArray = uniqueStrings(this.languages);
+  this.languages = uniqueArray;
+}
+
+exports.learnLanguage = Developer.learnLanguage;
