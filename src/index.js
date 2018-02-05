@@ -104,8 +104,6 @@ Garden.prototype.plant = function (morePlantsObject){
   var gardenContent = this.plants;
 
   for (var i = 0; i< keys.length; i++){
-    console.log(i);
-    console.log(gardenContent);
     if (gardenContent.hasOwnProperty[keys[i]]){
       gardenContent[keys[i]] += values[i];
     }
@@ -116,3 +114,29 @@ Garden.prototype.plant = function (morePlantsObject){
 }
 
 exports.plant = Garden.plant;
+
+
+Garden.prototype.harvest = function(harvestPlantsObject){
+  var keys = Object.keys(harvestPlantsObject);
+  var values = Object.values(harvestPlantsObject);
+
+  var gardenContent = this.plants;
+  console.log(gardenContent);
+  debugger;
+  for (var i = 0; i< keys.length; i++){
+    console.log(keys[i]);
+    console.log(gardenContent.hasOwnProperty[keys[i]]);
+    console.log(gardenContent.hasOwnProperty("begonia"));
+    if (gardenContent.hasOwnProperty[keys[i]]){
+      gardenContent[keys[i]] -= values[i];
+    }
+    else {
+      gardenContent[keys[i]] = values[i];
+    }
+    if (gardenContent[values[i]] === 0) {
+      delete gardenContent[keys[i]];
+    }
+  }
+}
+
+exports.harvest = Garden.harvest;

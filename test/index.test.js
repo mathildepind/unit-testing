@@ -54,8 +54,15 @@ test("garden", function(){
 test("plant", function(){
     var expected = {plants: {"rose":3, "dandelion": 9, "oak": 1, "begonia": 4, "snowdrop":19,},};
     var gardenStock = new functions.Garden({"rose":3, "dandelion": 9, "oak": 1, "begonia": 4,});
-    console.log(gardenStock);
-    gardenStock.plant({"snowdrop":19,})
+    gardenStock.plant({"snowdrop":19,});
     var result = gardenStock;
     expect(result).toEqual(expected);
+})
+
+test("harvest", function(){
+  var expected = {plants: {"rose":3, "dandelion": 6, "oak": 1,},};
+  var gardenStock = new functions.Garden({"rose":3, "dandelion": 9, "oak": 1, "begonia": 4,});
+  gardenStock.harvest({"begonia" : 4, "dandelion" : 3,});
+  var result = gardenStock;
+  expect(result).toEqual(expected);
 })
