@@ -40,8 +40,22 @@ test("developer", function(){
 test("learnLanguage", function(){
   var expected = {name: "Bob", languages: ["Java", "HTML", "CSS"],};
   var dev = new functions.Developer("Bob", ["Java", "HTML"]);
-  console.log(dev);
   dev.learnLanguage("CSS");
   var result = dev;
   expect(result).toEqual(expected);
+})
+
+test("garden", function(){
+  var expected = {plants: {"rose":3, "dandelion": 9, "oak": 1, "begonia": 4,},};
+  var result = new functions.Garden({"rose":3, "dandelion": 9, "oak": 1, "begonia": 4,});
+  expect(result).toEqual(expected);
+})
+
+test("plant", function(){
+    var expected = {plants: {"rose":3, "dandelion": 9, "oak": 1, "begonia": 4, "snowdrop":19,},};
+    var gardenStock = new functions.Garden({"rose":3, "dandelion": 9, "oak": 1, "begonia": 4,});
+    console.log(gardenStock);
+    gardenStock.plant({"snowdrop":19,})
+    var result = gardenStock;
+    expect(result).toEqual(expected);
 })

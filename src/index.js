@@ -88,3 +88,31 @@ Developer.prototype.learnLanguage = function (newLanguage){
 }
 
 exports.learnLanguage = Developer.learnLanguage;
+
+
+function Garden(objectOfPlants) {
+  this.plants = objectOfPlants;
+}
+
+exports.Garden = Garden;
+
+
+Garden.prototype.plant = function (morePlantsObject){
+  var keys = Object.keys(morePlantsObject);
+  var values = Object.values(morePlantsObject);
+
+  var gardenContent = this.plants;
+
+  for (var i = 0; i< keys.length; i++){
+    console.log(i);
+    console.log(gardenContent);
+    if (gardenContent.hasOwnProperty[keys[i]]){
+      gardenContent[keys[i]] += values[i];
+    }
+    else {
+      gardenContent[keys[i]] = values[i];
+    }
+  }
+}
+
+exports.plant = Garden.plant;
