@@ -64,3 +64,10 @@ function l337(string) {
 }
 
 exports.l337 = l337;
+
+function uniqueStrings(arrayOfStrings){
+  var uniqueSet = new Set (arrayOfStrings);
+  return Array.from(uniqueSet);
+}
+
+exports.uniqueStrings = uniqueStrings;

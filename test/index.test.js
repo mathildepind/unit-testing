@@ -21,3 +21,11 @@ test("l337", function(){
   expect(result1).toBe(expected1);
   expect(result2).toBe(expected2);
 })
+
+test('uniqueStrings', function(){
+  const result1 = functions.uniqueStrings(['a', 'bb', 'ccc', 'dddd', 'eeeee']);
+  const expected = ['a', 'bb', 'ccc', 'dddd', 'eeeee'];
+  const result2 = functions.uniqueStrings(['a', 'bb', 'ccc', 'dddd', 'eeeee', 'ccc']);
+  expect(result1).toEqual(expected);
+  expect(result2).toEqual(expected);
+})
