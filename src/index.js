@@ -71,3 +71,11 @@ function uniqueStrings(arrayOfStrings){
 }
 
 exports.uniqueStrings = uniqueStrings;
+
+
+function Developer(name,languages) {
+  this.name = name;
+  this.languages = languages;
+}
+
+exports.Developer = Developer;

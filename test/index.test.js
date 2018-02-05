@@ -29,3 +29,10 @@ test('uniqueStrings', function(){
   expect(result1).toEqual(expected);
   expect(result2).toEqual(expected);
 })
+
+test("developer", function(){
+  var expected = {name: "Bob", languages: ["Java", "HTML"],};
+  var result = new functions.Developer("Bob", ["Java", "HTML"]);
+  expect(result).toEqual(expected);
+
+})
