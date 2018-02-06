@@ -122,8 +122,19 @@ test("Walker", function() {
 })
 
 test("walk", function(){
-  var expected = {direction: "S", coordinates:[0, -3], journeyHistory:[[0,-3]],};
+  var expected = {direction: "S", coordinates:[0, -3], journeyHistory:[[0,0], [0,-3]],};
   var person = new functions.Walker("E");
   person.walk("S", 3);
   expect(person).toEqual(expected);
+})
+
+test("pathTaken", function(){
+  var expected = [[0,0],[0,-3],[4,-3],[4,-8],[2,-8],[2,-7]];
+  var person = new functions.Walker("E");
+  person.walk("S", 3);
+  person.walk("E", 4);
+  person.walk("S", 5);
+  person.walk("W", 2);
+  person.walk("N", 1);
+  expect(person.journeyHistory).toEqual(expected);
 })

@@ -246,7 +246,11 @@ exports.Walker = Walker;
 
 
 Walker.prototype.walk = function(direction,numberOfSteps){
-  this.journeyHistory = [];
+
+  if (!this.hasOwnProperty("journeyHistory")){
+    this.journeyHistory = [[0,0]];
+  }
+
   this.direction = direction;
   if (direction === 'S') {
     this.coordinates[1] = this.coordinates[1]-numberOfSteps;
@@ -257,5 +261,13 @@ Walker.prototype.walk = function(direction,numberOfSteps){
   } else if (direction === 'W') {
     this.coordinates[0] = this.coordinates[0]-numberOfSteps;
   }
-  this.journeyHistory.push(this.coordinates);
+  var newCoordinates = [].concat(this.coordinates);
+
+  this.journeyHistory.push(newCoordinates);
+}
+
+
+Walker.prototype.pathTaken = function(){
+  this.journeyHistory;
+  return this.journeyHistory;
 }
