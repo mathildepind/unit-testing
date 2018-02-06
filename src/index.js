@@ -222,3 +222,16 @@ function possibleValues(arrayOfObjects){
 }
 
 exports.possibleValues = possibleValues;
+
+
+function isPrime(number){
+  var square = Math.floor(Math.sqrt(number));
+  for (var i = 2; i<=square; i++){
+    if (number%i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+
+exports.isPrime = isPrime;
