@@ -137,3 +137,24 @@ Garden.prototype.harvest = function(harvestPlantsObject){
 }
 
 exports.harvest = Garden.harvest;
+
+
+function stringsConcat(arrayOfThings){
+  var outputArr = [];
+
+  arrayOfThings.forEach(function(item){
+    console.log(typeof(item));
+    if (typeof item === "string"){
+      outputArr.push(item);
+    }
+  })
+  return outputArr.join("");
+}
+
+exports.stringsConcat = stringsConcat;
+
+function negativeOnly(arrayOfNumbers){
+  return arrayOfNumbers.filter(number => number < 0);
+}
+
+exports.negativeOnly = negativeOnly;

@@ -74,3 +74,16 @@ test("harvest", function(){
   console.log(result);
   expect(result).toEqual(expected);
 })
+
+
+test("stringsConcat",function(){
+  var result = functions.stringsConcat(['a', 'bb', 12, 'ccc', 'dddd', [4], 'eeeee']);
+  var expected = 'abbcccddddeeeee';
+  expect(result).toEqual(expected);
+})
+
+test("negativeOnly", function(){
+  var result = functions.negativeOnly([-2, 5, -5, 2, -8, 20, -345, -3, 3000]);
+  var expected = [-2, -5, -8, -345, -3];
+  expect(result).toEqual(expected);
+})
