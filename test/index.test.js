@@ -87,3 +87,9 @@ test("negativeOnly", function(){
   var expected = [-2, -5, -8, -345, -3];
   expect(result).toEqual(expected);
 })
+
+test("camelise", function(){
+  var result = functions.camelise('camel this string');
+  var expected = ('camelThisString');
+  expect(result).toEqual(expected);
+})

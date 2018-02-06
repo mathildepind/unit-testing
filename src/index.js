@@ -143,7 +143,6 @@ function stringsConcat(arrayOfThings){
   var outputArr = [];
 
   arrayOfThings.forEach(function(item){
-    console.log(typeof(item));
     if (typeof item === "string"){
       outputArr.push(item);
     }
@@ -158,3 +157,16 @@ function negativeOnly(arrayOfNumbers){
 }
 
 exports.negativeOnly = negativeOnly;
+
+function camelise(string){
+  var arrayFromStr = string.split(" ");
+  for (var i = 1; i< arrayFromStr.length; i++){
+    var firstCap = arrayFromStr[i].charAt(0).toUpperCase();
+    arrayFromStr[i] = firstCap + arrayFromStr[i].substring(1);
+  }
+
+  return arrayFromStr.join("");
+
+}
+
+exports.camelise = camelise;
