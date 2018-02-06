@@ -176,7 +176,6 @@ function merging(arrayOfObjects){
   for (var arrayIterator = 0; arrayIterator<arrayOfObjects.length; arrayIterator++){ // Each will be an object
     var keys = Object.keys(arrayOfObjects[arrayIterator]);
     for (var keysIterator = 0; keysIterator<keys.length; keysIterator++){
-      console.log(outputObject.hasOwnProperty([keys[keysIterator]]));
       var incomingValue = arrayOfObjects[arrayIterator][keys[keysIterator]]; // value of each matching key in an object
 
 
@@ -197,3 +196,29 @@ function merging(arrayOfObjects){
 }
 
 exports.merging = merging;
+
+function possibleValues(arrayOfObjects){
+  var outputObject = {};
+  for (var arrayIterator = 0; arrayIterator<arrayOfObjects.length; arrayIterator++){ // Each will be an object
+    var keys = Object.keys(arrayOfObjects[arrayIterator]);
+    for (var keysIterator = 0; keysIterator<keys.length; keysIterator++){
+      var incomingValue = arrayOfObjects[arrayIterator][keys[keysIterator]]; // value of each matching key in an object
+
+
+      if (outputObject.hasOwnProperty([keys[keysIterator]])){
+        var existingValue = outputObject[keys[keysIterator]];
+        existingValue.push(incomingValue);
+        var unique = new Set(existingValue);
+        var uniqueArr = Array.from(unique);
+        outputObject[keys[keysIterator]] = uniqueArr;
+      }
+      else {
+        outputObject[keys[keysIterator]] = [incomingValue];
+
+      }
+    }
+  }
+  return outputObject;
+}
+
+exports.possibleValues = possibleValues;
