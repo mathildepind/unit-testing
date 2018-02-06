@@ -114,3 +114,16 @@ test("isPrime", function(){
   expect(result1).toEqual(expected1);
   expect(result2).toEqual(expected2);
 })
+
+test("Walker", function() {
+  var expected = {direction: "E", coordinates: [0,0],};
+  var result = new functions.Walker("E");
+  expect(result).toEqual(expected);
+})
+
+test("walk", function(){
+  var expected = {direction: "S", coordinates:[0, -3], journeyHistory:[[0,-3]],};
+  var person = new functions.Walker("E");
+  person.walk("S", 3);
+  expect(person).toEqual(expected);
+})

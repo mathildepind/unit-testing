@@ -235,3 +235,27 @@ function isPrime(number){
 }
 
 exports.isPrime = isPrime;
+
+
+function Walker(direction) {
+  this.direction = direction;
+  this.coordinates = [0,0];
+}
+
+exports.Walker = Walker;
+
+
+Walker.prototype.walk = function(direction,numberOfSteps){
+  this.journeyHistory = [];
+  this.direction = direction;
+  if (direction === 'S') {
+    this.coordinates[1] = this.coordinates[1]-numberOfSteps;
+  } else if (direction === 'N') {
+    this.coordinates[1] = this.coordinates[1]+numberOfSteps;
+  } else if (direction === 'E') {
+    this.coordinates[0] = this.coordinates[0]+numberOfSteps;
+  } else if (direction === 'W') {
+    this.coordinates[0] = this.coordinates[0]-numberOfSteps;
+  }
+  this.journeyHistory.push(this.coordinates);
+}
