@@ -105,3 +105,12 @@ test("possibleValues",function(){
   var expected = {a:[5,3], b:[21], c:[32]};
   expect(result).toEqual(expected);
 })
+
+test("isPrime", function(){
+  var result1 = functions.isPrime(89);
+  var expected1 = true;
+  var result2 = functions.isPrime(12);
+  var expected2 = false;
+  expect(result1).toEqual(expected1);
+  expect(result2).toEqual(expected2);
+})
