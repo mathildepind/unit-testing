@@ -117,18 +117,12 @@ exports.plant = Garden.plant;
 
 
 Garden.prototype.harvest = function(harvestPlantsObject){
-  console.log('harvest:', harvestPlantsObject);
   var keys = Object.keys(harvestPlantsObject);
   var values = Object.values(harvestPlantsObject);
 
   var gardenContent = this.plants;
-  console.log('garden content:', gardenContent);
-  debugger;
   for (var i = 0; i< keys.length; i++){
-    console.log(keys[i]);
 
-    console.log(gardenContent.hasOwnProperty[keys[i]]);
-    console.log(gardenContent.hasOwnProperty("begonia"));
     if (gardenContent.hasOwnProperty(keys[i])){
       gardenContent[keys[i]] -= values[i];
     }
