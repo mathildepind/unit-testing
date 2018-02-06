@@ -94,8 +94,14 @@ test("camelise", function(){
   expect(result).toEqual(expected);
 })
 
-test.only("merging", function(){
+test("merging", function(){
   var result = functions.merging([{a: 5}, {a: 3, b: 21, c:32}]);
   var expected = {a:5, b:21, c:32};
+  expect(result).toEqual(expected);
+})
+
+test("possibleValues",function(){
+  var result = functions.possibleValues([{a: 5}, {a: 3, b: 21, c:32}, {a: 3, c:32}]);
+  var expected = {a:[5,3], b:[21], c:[32]};
   expect(result).toEqual(expected);
 })
