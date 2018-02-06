@@ -170,3 +170,30 @@ function camelise(string){
 }
 
 exports.camelise = camelise;
+
+function merging(arrayOfObjects){
+  var outputObject = {};
+  for (var arrayIterator = 0; arrayIterator<arrayOfObjects.length; arrayIterator++){ // Each will be an object
+    var keys = Object.keys(arrayOfObjects[arrayIterator]);
+    for (var keysIterator = 0; keysIterator<keys.length; keysIterator++){
+      console.log(outputObject.hasOwnProperty([keys[keysIterator]]));
+      var incomingValue = arrayOfObjects[arrayIterator][keys[keysIterator]]; // value of each matching key in an object
+
+
+      if (outputObject.hasOwnProperty([keys[keysIterator]])){
+        var existingValue = outputObject[keys[keysIterator]];
+
+        if (incomingValue > existingValue){
+          outputObject[keys[keysIterator]] = incomingValue;
+        }
+      }
+      else {
+        outputObject[keys[keysIterator]] = incomingValue;
+
+      }
+    }
+  }
+  return outputObject;
+}
+
+exports.merging = merging;

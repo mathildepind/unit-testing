@@ -90,6 +90,12 @@ test("negativeOnly", function(){
 
 test("camelise", function(){
   var result = functions.camelise('camel this string');
-  var expected = ('camelThisString');
+  var expected = 'camelThisString';
+  expect(result).toEqual(expected);
+})
+
+test.only("merging", function(){
+  var result = functions.merging([{a: 5}, {a: 3, b: 21, c:32}]);
+  var expected = {a:5, b:21, c:32};
   expect(result).toEqual(expected);
 })
